@@ -1,0 +1,123 @@
+@layer reset, components, responsive;
+
+@layer reset {
+  .contact {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    input,
+    textarea {
+      outline: none;
+    }
+  }
+}
+
+@layer components {
+  .contact {
+    container-type: inline-size;
+    container-name: contactPageContainer;
+    padding: 2rem 0;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background-color: $background-color-new;
+      border-radius: $border-radius;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5cqi, 3rem);
+      color: $primary-color-new; // stylelint-disable-line  declaration-block-no-duplicate-properties
+      color: $primary-color-fallback;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1cqh;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .contact__container--form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      padding: 0.8rem;
+      border: 1px solid $primary-color-new; // stylelint-disable-line  declaration-block-no-duplicate-properties
+      border: 1px solid $primary-color-fallback;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      width: 100%;
+      background: $button-hover-new;
+
+      &:focus {
+        outline: none;
+        border-color: $button-hover-new;
+        background-color: white;
+      }
+    }
+    .cta {
+      width: 100%;
+      text-align: center;
+
+      button {
+        padding: 0.8rem 1.2rem;
+        background-color: $button-hover-new;
+        color: $text-color-new; // stylelint-disable-line  declaration-block-no-duplicate-properties
+        color: $text-color-fallback;
+        border: none;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          color: white;
+          background-color: $primary-color-fallback;
+        }
+      }
+    }
+  }
+}
+
+@layer responsive {
+  @container contactPageContainer (min-width: 768px) {
+    .contact__container {
+      max-width: 800px;
+    }
+
+    .cta {
+      width: 100%;
+      text-align: center;
+
+      button {
+        max-width: 300px;
+        padding: 1rem 1.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

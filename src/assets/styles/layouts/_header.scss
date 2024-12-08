@@ -1,0 +1,52 @@
+@layer reset, components;
+
+@layer reset {
+  a::before {
+    content: none;
+  }
+}
+
+@layer components {
+  .navbar {
+    .navbar-brand {
+      font-weight: bolder;
+      font-size: xx-large;
+    }
+
+    .nav-link {
+      color: $dark;
+      text-decoration: none;
+      position: relative;
+      font-weight: normal;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+        height: 3px;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+      }
+
+      &:hover {
+        color: $primary-color;
+        font-weight: 900;
+
+        &::after {
+          background-color: $primary-color;
+        }
+      }
+
+      &.active {
+        color: $primary-color;
+        font-weight: 900;
+
+        &::after {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}

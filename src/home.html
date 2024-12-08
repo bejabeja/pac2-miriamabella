@@ -1,0 +1,43 @@
+<main class="home">
+  <include src="./components/header.html"></include>
+
+  <section class="home--main-content">
+    <h1>Jornadas de Seguridad Informática 2024</h1>
+
+    <div id="countdown" class="countdown"></div>
+
+    <h3 class="subtitle">¡Ciberseguridad al alcance de todos!</h3>
+
+    <img
+      src="https://images.pexels.com/photos/9783353/pexels-photo-9783353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt="Imagen de Seguridad Informática"
+    />
+
+    <div class="home--main-content__event-info">
+      <p>
+        <strong>Fecha:</strong>
+        14 de diciembre de 2024
+      </p>
+      <p>
+        <strong>Hora:</strong>
+        9:00 AM - 5:00 PM
+      </p>
+      <p>
+        <strong>Ubicación:</strong>
+        Auditorio Principal, Universidad ABC
+      </p>
+    </div>
+
+    <div class="home--main-content__cta">
+      <a href="./speakers" class="button">¡Saber más!</a>
+      <!-- <button href="#" class="button">¡Saber más!</button> -->
+    </div>
+  </section>
+
+  <include src="./components/footer.html"></include>
+  <script>
+    $("#countdown").countdown("2024/12/25", function (event) {
+      $(this).html(event.strftime("%D días %H:%M:%S"));
+    });
+  </script>
+</main>

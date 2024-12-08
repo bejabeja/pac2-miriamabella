@@ -1,0 +1,54 @@
+.speakers--title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 3rem 0 1rem;
+  font-weight: bolder;
+}
+
+.speakers {
+  container-type: inline-size;
+  container-name: speakers-container;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+
+  &--content {
+    width: 300px;
+    min-height: 350px;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 1rem;
+    padding-top: 2rem;
+    border-radius: 8px;
+
+    &__image {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    &__bio {
+      font-size: small;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .speakers {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@container speakers-container (min-width: 768px) {
+  .speakers--content {
+    width: 30%;
+  }
+}

@@ -1,0 +1,50 @@
+<link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+<include src="./components/header.html"></include>
+
+<main class="contact">
+  <section class="contact__container">
+    <h1>Contáctanos</h1>
+    <p>
+      Si tienes alguna pregunta, sugerencia o quieres saber más sobre las
+      jornadas de seguridad informática, ¡escríbenos!
+    </p>
+
+    <form
+      class="contact__container--form"
+      action="mailto:mabella@uoc.cat"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <label for="name">Nombre completo</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Escribe tu nombre"
+        required
+      />
+
+      <label for="email">Correo electrónico</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Escribe tu correo"
+        required
+      />
+
+      <label for="message">Mensaje</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        placeholder="Escribe tu mensaje aquí"
+        required
+      ></textarea>
+      <div class="cta">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </section>
+</main>
+<include src="./components/footer.html"></include>
